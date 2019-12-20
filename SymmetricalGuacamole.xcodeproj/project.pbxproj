@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C90F9E2723ABDEAF00897330 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C90F9E2623ABDEAF00897330 /* Alamofire */; };
+		C92F052223AC634600F298DF /* RecentlyAddedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92F051D23AC634600F298DF /* RecentlyAddedResponse.swift */; };
 		C95B286A23AB26560040380B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B286923AB26560040380B /* AppDelegate.swift */; };
 		C95B286C23AB26560040380B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B286B23AB26560040380B /* SceneDelegate.swift */; };
 		C95B286E23AB26560040380B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B286D23AB26560040380B /* ContentView.swift */; };
@@ -16,8 +16,9 @@
 		C95B287623AB26560040380B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C95B287423AB26560040380B /* LaunchScreen.storyboard */; };
 		C95B288123AB26560040380B /* SymmetricalGuacamoleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B288023AB26560040380B /* SymmetricalGuacamoleTests.swift */; };
 		C95B288C23AB26560040380B /* SymmetricalGuacamoleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B288B23AB26560040380B /* SymmetricalGuacamoleUITests.swift */; };
-		C9F1D85423ABF5DF0031EA5B /* SwiftUIFlux in Frameworks */ = {isa = PBXBuildFile; productRef = C9F1D85323ABF5DF0031EA5B /* SwiftUIFlux */; };
-		C9F1D85B23ABF7630031EA5B /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1D85A23ABF7630031EA5B /* APIService.swift */; };
+		C9E7DC2423AD1FF600101D16 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = C9E7DC2323AD1FF600101D16 /* SDWebImageSwiftUI */; };
+		C9E7DC2723AD24BB00101D16 /* WaterfallGrid in Frameworks */ = {isa = PBXBuildFile; productRef = C9E7DC2623AD24BB00101D16 /* WaterfallGrid */; };
+		C9F1D85B23ABF7630031EA5B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1D85A23ABF7630031EA5B /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C92F053523AC811800F298DF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		C92F051D23AC634600F298DF /* RecentlyAddedResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentlyAddedResponse.swift; sourceTree = "<group>"; };
 		C95B286623AB26560040380B /* Guacamole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guacamole.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C95B286923AB26560040380B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C95B286B23AB26560040380B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,7 +67,7 @@
 		C95B288723AB26560040380B /* SymmetricalGuacamoleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SymmetricalGuacamoleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C95B288B23AB26560040380B /* SymmetricalGuacamoleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymmetricalGuacamoleUITests.swift; sourceTree = "<group>"; };
 		C95B288D23AB26560040380B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C9F1D85A23ABF7630031EA5B /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		C9F1D85A23ABF7630031EA5B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C90F9E2723ABDEAF00897330 /* Alamofire in Frameworks */,
-				C9F1D85423ABF5DF0031EA5B /* SwiftUIFlux in Frameworks */,
+				C9E7DC2423AD1FF600101D16 /* SDWebImageSwiftUI in Frameworks */,
+				C9E7DC2723AD24BB00101D16 /* WaterfallGrid in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C92F051623AC592500F298DF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C92F051D23AC634600F298DF /* RecentlyAddedResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		C95B285D23AB26560040380B = {
 			isa = PBXGroup;
 			children = (
@@ -105,7 +128,8 @@
 		C95B286823AB26560040380B /* SymmetricalGuacamole */ = {
 			isa = PBXGroup;
 			children = (
-				C9F1D85923ABF7570031EA5B /* services */,
+				C92F051623AC592500F298DF /* Model */,
+				C9F1D85923ABF7570031EA5B /* Services */,
 				C95B286923AB26560040380B /* AppDelegate.swift */,
 				C95B286B23AB26560040380B /* SceneDelegate.swift */,
 				C95B286D23AB26560040380B /* ContentView.swift */,
@@ -143,12 +167,12 @@
 			path = SymmetricalGuacamoleUITests;
 			sourceTree = "<group>";
 		};
-		C9F1D85923ABF7570031EA5B /* services */ = {
+		C9F1D85923ABF7570031EA5B /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				C9F1D85A23ABF7630031EA5B /* APIService.swift */,
+				C9F1D85A23ABF7630031EA5B /* NetworkManager.swift */,
 			);
-			path = services;
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +185,7 @@
 				C95B286223AB26560040380B /* Sources */,
 				C95B286323AB26560040380B /* Frameworks */,
 				C95B286423AB26560040380B /* Resources */,
+				C92F053523AC811800F298DF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -168,8 +193,8 @@
 			);
 			name = SymmetricalGuacamole;
 			packageProductDependencies = (
-				C90F9E2623ABDEAF00897330 /* Alamofire */,
-				C9F1D85323ABF5DF0031EA5B /* SwiftUIFlux */,
+				C9E7DC2323AD1FF600101D16 /* SDWebImageSwiftUI */,
+				C9E7DC2623AD24BB00101D16 /* WaterfallGrid */,
 			);
 			productName = SymmetricalGuacamole;
 			productReference = C95B286623AB26560040380B /* Guacamole.app */;
@@ -244,8 +269,8 @@
 			);
 			mainGroup = C95B285D23AB26560040380B;
 			packageReferences = (
-				C90F9E2523ABDEAF00897330 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				C9F1D85223ABF5DF0031EA5B /* XCRemoteSwiftPackageReference "SwiftUIFlux" */,
+				C9E7DC2223AD1FF600101D16 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				C9E7DC2523AD24BB00101D16 /* XCRemoteSwiftPackageReference "WaterfallGrid" */,
 			);
 			productRefGroup = C95B286723AB26560040380B /* Products */;
 			projectDirPath = "";
@@ -292,7 +317,8 @@
 			files = (
 				C95B286A23AB26560040380B /* AppDelegate.swift in Sources */,
 				C95B286C23AB26560040380B /* SceneDelegate.swift in Sources */,
-				C9F1D85B23ABF7630031EA5B /* APIService.swift in Sources */,
+				C9F1D85B23ABF7630031EA5B /* NetworkManager.swift in Sources */,
+				C92F052223AC634600F298DF /* RecentlyAddedResponse.swift in Sources */,
 				C95B286E23AB26560040380B /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -620,34 +646,34 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C90F9E2523ABDEAF00897330 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		C9E7DC2223AD1FF600101D16 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.9.1;
+				minimumVersion = 0.10.0;
 			};
 		};
-		C9F1D85223ABF5DF0031EA5B /* XCRemoteSwiftPackageReference "SwiftUIFlux" */ = {
+		C9E7DC2523AD24BB00101D16 /* XCRemoteSwiftPackageReference "WaterfallGrid" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Dimillian/SwiftUIFlux";
+			repositoryURL = "https://github.com/paololeonardi/WaterfallGrid";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.4.5;
+				minimumVersion = 0.3.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C90F9E2623ABDEAF00897330 /* Alamofire */ = {
+		C9E7DC2323AD1FF600101D16 /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C90F9E2523ABDEAF00897330 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
+			package = C9E7DC2223AD1FF600101D16 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
-		C9F1D85323ABF5DF0031EA5B /* SwiftUIFlux */ = {
+		C9E7DC2623AD24BB00101D16 /* WaterfallGrid */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C9F1D85223ABF5DF0031EA5B /* XCRemoteSwiftPackageReference "SwiftUIFlux" */;
-			productName = SwiftUIFlux;
+			package = C9E7DC2523AD24BB00101D16 /* XCRemoteSwiftPackageReference "WaterfallGrid" */;
+			productName = WaterfallGrid;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

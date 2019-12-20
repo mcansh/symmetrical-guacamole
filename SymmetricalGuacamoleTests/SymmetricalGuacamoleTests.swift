@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import SymmetricalGuacamole
+@testable import Guacamole
 
 class SymmetricalGuacamoleTests: XCTestCase {
 

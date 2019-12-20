@@ -2,21 +2,30 @@
   "object": {
     "pins": [
       {
-        "package": "Alamofire",
-        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "package": "SDWebImage",
+        "repositoryURL": "https://github.com/SDWebImage/SDWebImage.git",
         "state": {
           "branch": null,
-          "revision": "747c8db8d57b68d5e35275f10c92d55f982adbd4",
-          "version": "4.9.1"
+          "revision": "7ef9a314b12c1a31edb0d09d41fcba93143fe772",
+          "version": "5.4.0"
         }
       },
       {
-        "package": "SwiftUIFlux",
-        "repositoryURL": "https://github.com/Dimillian/SwiftUIFlux",
+        "package": "SDWebImageSwiftUI",
+        "repositoryURL": "https://github.com/SDWebImage/SDWebImageSwiftUI",
         "state": {
           "branch": null,
-          "revision": "aa97f7f053941ecf288824a92294bf39ab118dd1",
-          "version": "0.4.5"
+          "revision": "a3f30bafdcee6ca2aeec58da3ab249e075f268f0",
+          "version": "0.10.0"
+        }
+      },
+      {
+        "package": "WaterfallGrid",
+        "repositoryURL": "https://github.com/paololeonardi/WaterfallGrid",
+        "state": {
+          "branch": null,
+          "revision": "92ce6e6a78a96a518f44df6690f849f6b6a1f3c9",
+          "version": "0.3.2"
         }
       }
     ]
