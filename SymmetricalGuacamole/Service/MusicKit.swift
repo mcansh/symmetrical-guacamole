@@ -75,7 +75,7 @@ struct FluffyAttributes: Codable {
 class MusicKit {
     func recentlyAdded(completion: @escaping (APIResponse) -> ()) {
         let request = AppleMusicRequestFactory.createRecentlyAddedRequest(developerToken: "", userToken: "")
-        
+
         URLSession.shared.dataTask(with: request) { data, _, _ in
             let json = try! JSONDecoder().decode(APIResponse.self, from: data!)
             DispatchQueue.main.async {
@@ -83,7 +83,4 @@ class MusicKit {
             }
         }.resume()
     }
-    
-//
-    
 }
