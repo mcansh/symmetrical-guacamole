@@ -2,30 +2,12 @@
   "object": {
     "pins": [
       {
-        "package": "SDWebImage",
-        "repositoryURL": "https://github.com/SDWebImage/SDWebImage.git",
+        "package": "URLImage",
+        "repositoryURL": "https://github.com/dmytro-anokhin/url-image",
         "state": {
           "branch": null,
-          "revision": "7ef9a314b12c1a31edb0d09d41fcba93143fe772",
-          "version": "5.4.0"
-        }
-      },
-      {
-        "package": "SDWebImageSwiftUI",
-        "repositoryURL": "https://github.com/SDWebImage/SDWebImageSwiftUI",
-        "state": {
-          "branch": null,
-          "revision": "a3f30bafdcee6ca2aeec58da3ab249e075f268f0",
-          "version": "0.10.0"
-        }
-      },
-      {
-        "package": "WaterfallGrid",
-        "repositoryURL": "https://github.com/paololeonardi/WaterfallGrid",
-        "state": {
-          "branch": null,
-          "revision": "92ce6e6a78a96a518f44df6690f849f6b6a1f3c9",
-          "version": "0.3.2"
+          "revision": "5d3a5dc84f9bdf948d8b136f7a1b0099af68f114",
+          "version": "0.9.9"
         }
       }
     ]

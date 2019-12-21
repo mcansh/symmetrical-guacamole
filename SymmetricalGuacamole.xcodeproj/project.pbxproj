@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C92F052223AC634600F298DF /* RecentlyAddedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92F051D23AC634600F298DF /* RecentlyAddedResponse.swift */; };
+		C90A5A7023AEA1FD004D3597 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = C90A5A6F23AEA1FD004D3597 /* URLImage */; };
+		C94895E623AEAD6D00909DEF /* AlbumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94895E523AEAD6D00909DEF /* AlbumViewModel.swift */; };
 		C95B286A23AB26560040380B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B286923AB26560040380B /* AppDelegate.swift */; };
 		C95B286C23AB26560040380B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B286B23AB26560040380B /* SceneDelegate.swift */; };
 		C95B286E23AB26560040380B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B286D23AB26560040380B /* ContentView.swift */; };
@@ -16,9 +17,10 @@
 		C95B287623AB26560040380B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C95B287423AB26560040380B /* LaunchScreen.storyboard */; };
 		C95B288123AB26560040380B /* SymmetricalGuacamoleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B288023AB26560040380B /* SymmetricalGuacamoleTests.swift */; };
 		C95B288C23AB26560040380B /* SymmetricalGuacamoleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B288B23AB26560040380B /* SymmetricalGuacamoleUITests.swift */; };
-		C9E7DC2423AD1FF600101D16 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = C9E7DC2323AD1FF600101D16 /* SDWebImageSwiftUI */; };
-		C9E7DC2723AD24BB00101D16 /* WaterfallGrid in Frameworks */ = {isa = PBXBuildFile; productRef = C9E7DC2623AD24BB00101D16 /* WaterfallGrid */; };
-		C9F1D85B23ABF7630031EA5B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1D85A23ABF7630031EA5B /* NetworkManager.swift */; };
+		C9F9FA9323AE73A500A4438B /* AppleMusicRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F9FA9223AE73A500A4438B /* AppleMusicRequestFactory.swift */; };
+		C9F9FAA023AE90F500A4438B /* MusicKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F9FA9F23AE90F500A4438B /* MusicKit.swift */; };
+		C9F9FAA323AE94EB00A4438B /* AlbumListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F9FAA223AE94EB00A4438B /* AlbumListViewModel.swift */; };
+		C9F9FAA623AE9E5000A4438B /* NavigationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F9FAA523AE9E5000A4438B /* NavigationList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +54,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C92F051D23AC634600F298DF /* RecentlyAddedResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentlyAddedResponse.swift; sourceTree = "<group>"; };
+		C94895E523AEAD6D00909DEF /* AlbumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewModel.swift; sourceTree = "<group>"; };
 		C95B286623AB26560040380B /* Guacamole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guacamole.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C95B286923AB26560040380B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C95B286B23AB26560040380B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,7 +69,10 @@
 		C95B288723AB26560040380B /* SymmetricalGuacamoleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SymmetricalGuacamoleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C95B288B23AB26560040380B /* SymmetricalGuacamoleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymmetricalGuacamoleUITests.swift; sourceTree = "<group>"; };
 		C95B288D23AB26560040380B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C9F1D85A23ABF7630031EA5B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		C9F9FA9223AE73A500A4438B /* AppleMusicRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicRequestFactory.swift; sourceTree = "<group>"; };
+		C9F9FA9F23AE90F500A4438B /* MusicKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicKit.swift; sourceTree = "<group>"; };
+		C9F9FAA223AE94EB00A4438B /* AlbumListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListViewModel.swift; sourceTree = "<group>"; };
+		C9F9FAA523AE9E5000A4438B /* NavigationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9E7DC2423AD1FF600101D16 /* SDWebImageSwiftUI in Frameworks */,
-				C9E7DC2723AD24BB00101D16 /* WaterfallGrid in Frameworks */,
+				C90A5A7023AEA1FD004D3597 /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,14 +101,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C92F051623AC592500F298DF /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				C92F051D23AC634600F298DF /* RecentlyAddedResponse.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		C95B285D23AB26560040380B = {
 			isa = PBXGroup;
 			children = (
@@ -128,11 +124,11 @@
 		C95B286823AB26560040380B /* SymmetricalGuacamole */ = {
 			isa = PBXGroup;
 			children = (
-				C92F051623AC592500F298DF /* Model */,
-				C9F1D85923ABF7570031EA5B /* Services */,
+				C9F9FAA123AE94DE00A4438B /* View Model */,
+				C9F9FA9123AE739A00A4438B /* Service */,
 				C95B286923AB26560040380B /* AppDelegate.swift */,
 				C95B286B23AB26560040380B /* SceneDelegate.swift */,
-				C95B286D23AB26560040380B /* ContentView.swift */,
+				C9F9FAA423AE9E3500A4438B /* Views */,
 				C95B286F23AB26560040380B /* Assets.xcassets */,
 				C95B287423AB26560040380B /* LaunchScreen.storyboard */,
 				C95B287723AB26560040380B /* Info.plist */,
@@ -167,20 +163,39 @@
 			path = SymmetricalGuacamoleUITests;
 			sourceTree = "<group>";
 		};
-		C9F1D85923ABF7570031EA5B /* Services */ = {
+		C9F9FA9123AE739A00A4438B /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				C9F1D85A23ABF7630031EA5B /* NetworkManager.swift */,
+				C9F9FA9223AE73A500A4438B /* AppleMusicRequestFactory.swift */,
+				C9F9FA9F23AE90F500A4438B /* MusicKit.swift */,
 			);
-			path = Services;
+			path = Service;
+			sourceTree = "<group>";
+		};
+		C9F9FAA123AE94DE00A4438B /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				C9F9FAA223AE94EB00A4438B /* AlbumListViewModel.swift */,
+				C94895E523AEAD6D00909DEF /* AlbumViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		C9F9FAA423AE9E3500A4438B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C95B286D23AB26560040380B /* ContentView.swift */,
+				C9F9FAA523AE9E5000A4438B /* NavigationList.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C95B286523AB26560040380B /* SymmetricalGuacamole */ = {
+		C95B286523AB26560040380B /* Guacamole */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C95B289023AB26560040380B /* Build configuration list for PBXNativeTarget "SymmetricalGuacamole" */;
+			buildConfigurationList = C95B289023AB26560040380B /* Build configuration list for PBXNativeTarget "Guacamole" */;
 			buildPhases = (
 				C95B286223AB26560040380B /* Sources */,
 				C95B286323AB26560040380B /* Frameworks */,
@@ -191,10 +206,9 @@
 			);
 			dependencies = (
 			);
-			name = SymmetricalGuacamole;
+			name = Guacamole;
 			packageProductDependencies = (
-				C9E7DC2323AD1FF600101D16 /* SDWebImageSwiftUI */,
-				C9E7DC2623AD24BB00101D16 /* WaterfallGrid */,
+				C90A5A6F23AEA1FD004D3597 /* URLImage */,
 			);
 			productName = SymmetricalGuacamole;
 			productReference = C95B286623AB26560040380B /* Guacamole.app */;
@@ -269,14 +283,13 @@
 			);
 			mainGroup = C95B285D23AB26560040380B;
 			packageReferences = (
-				C9E7DC2223AD1FF600101D16 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
-				C9E7DC2523AD24BB00101D16 /* XCRemoteSwiftPackageReference "WaterfallGrid" */,
+				C90A5A6E23AEA1FD004D3597 /* XCRemoteSwiftPackageReference "url-image" */,
 			);
 			productRefGroup = C95B286723AB26560040380B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C95B286523AB26560040380B /* SymmetricalGuacamole */,
+				C95B286523AB26560040380B /* Guacamole */,
 				C95B287B23AB26560040380B /* SymmetricalGuacamoleTests */,
 				C95B288623AB26560040380B /* SymmetricalGuacamoleUITests */,
 			);
@@ -316,9 +329,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C95B286A23AB26560040380B /* AppDelegate.swift in Sources */,
+				C9F9FA9323AE73A500A4438B /* AppleMusicRequestFactory.swift in Sources */,
 				C95B286C23AB26560040380B /* SceneDelegate.swift in Sources */,
-				C9F1D85B23ABF7630031EA5B /* NetworkManager.swift in Sources */,
-				C92F052223AC634600F298DF /* RecentlyAddedResponse.swift in Sources */,
+				C9F9FAA623AE9E5000A4438B /* NavigationList.swift in Sources */,
+				C94895E623AEAD6D00909DEF /* AlbumViewModel.swift in Sources */,
+				C9F9FAA323AE94EB00A4438B /* AlbumListViewModel.swift in Sources */,
+				C9F9FAA023AE90F500A4438B /* MusicKit.swift in Sources */,
 				C95B286E23AB26560040380B /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,12 +360,12 @@
 /* Begin PBXTargetDependency section */
 		C95B287E23AB26560040380B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C95B286523AB26560040380B /* SymmetricalGuacamole */;
+			target = C95B286523AB26560040380B /* Guacamole */;
 			targetProxy = C95B287D23AB26560040380B /* PBXContainerItemProxy */;
 		};
 		C95B288923AB26560040380B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C95B286523AB26560040380B /* SymmetricalGuacamole */;
+			target = C95B286523AB26560040380B /* Guacamole */;
 			targetProxy = C95B288823AB26560040380B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -485,7 +501,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"SymmetricalGuacamole/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = ZN48NS8HAP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SymmetricalGuacamole/Info.plist;
@@ -505,7 +521,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"SymmetricalGuacamole/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = ZN48NS8HAP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SymmetricalGuacamole/Info.plist;
@@ -616,7 +632,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C95B289023AB26560040380B /* Build configuration list for PBXNativeTarget "SymmetricalGuacamole" */ = {
+		C95B289023AB26560040380B /* Build configuration list for PBXNativeTarget "Guacamole" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C95B289123AB26560040380B /* Debug */,
@@ -646,34 +662,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C9E7DC2223AD1FF600101D16 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+		C90A5A6E23AEA1FD004D3597 /* XCRemoteSwiftPackageReference "url-image" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.10.0;
-			};
-		};
-		C9E7DC2523AD24BB00101D16 /* XCRemoteSwiftPackageReference "WaterfallGrid" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/paololeonardi/WaterfallGrid";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.3.2;
+				minimumVersion = 0.9.9;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C9E7DC2323AD1FF600101D16 /* SDWebImageSwiftUI */ = {
+		C90A5A6F23AEA1FD004D3597 /* URLImage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C9E7DC2223AD1FF600101D16 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
-			productName = SDWebImageSwiftUI;
-		};
-		C9E7DC2623AD24BB00101D16 /* WaterfallGrid */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9E7DC2523AD24BB00101D16 /* XCRemoteSwiftPackageReference "WaterfallGrid" */;
-			productName = WaterfallGrid;
+			package = C90A5A6E23AEA1FD004D3597 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
