@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "Sentry",
+        "repositoryURL": "https://github.com/getsentry/sentry-cocoa.git",
+        "state": {
+          "branch": null,
+          "revision": "bb3c1d852980432907cd314e4fa984fc9a78c9f3",
+          "version": "4.4.3"
+        }
+      },
+      {
         "package": "URLImage",
         "repositoryURL": "https://github.com/dmytro-anokhin/url-image",
         "state": {
