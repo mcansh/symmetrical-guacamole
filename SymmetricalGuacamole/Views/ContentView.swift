@@ -34,7 +34,7 @@ struct AlbumArt: View {
                 Image("DefaultAlbumArt")
                     .resizable()
                     .cornerRadius(4)
-                    .aspectRatio(contentMode: .fit)
+                    .aspectRatio(1, contentMode: .fill)
             } else {
                 URLImage(
                     imageURL(),
@@ -42,7 +42,7 @@ struct AlbumArt: View {
                         Image("DefaultAlbumArt")
                             .resizable()
                             .cornerRadius(4)
-                            .aspectRatio(contentMode: .fit)
+                            .aspectRatio(1, contentMode: .fill)
                 },
                     content: { proxy in
                         proxy.image
@@ -64,12 +64,12 @@ struct ContentView: View {
 
     func updateCurrentItemMetadata() {
         if let current = musicPlayerManager.nowPlayingItem {
-            print(current.artwork)
+            print(current)
             nowPlayingArtwork = current.artwork?.image != nil ? Image(uiImage: (current.artwork?.image(at: CGSize(width: 100, height: 100)))!) : Image("DefaultAlbumArt")
             nowPlayingTitle = current.title ?? "Not Playing"
         } else {
-            print("nothing is playing")
             nowPlayingTitle = "Not Playing"
+            nowPlayingArtwork = Image("DefaultAlbumArt")
         }
     }
 
