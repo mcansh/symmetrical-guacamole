@@ -13,12 +13,12 @@ import URLImage
 
 
 struct AlbumArt: View {
-    private var url: String
-    private var size: Int
+    var url: String?
+    var size: Int
     
     private func imageURL() -> URL {
         // 1) Replace the "{w}" placeholder with the desired width as an integer value.
-        var imageURLString = self.url.replacingOccurrences(of: "{w}", with: "\(self.size)")
+        var imageURLString = self.url!.replacingOccurrences(of: "{w}", with: "\(self.size)")
         
         // 2) Replace the "{h}" placeholder with the desired height as an integer value.
         imageURLString = imageURLString.replacingOccurrences(of: "{h}", with: "\(self.size)")
@@ -29,49 +29,29 @@ struct AlbumArt: View {
         return URL(string: imageURLString)!
     }
     
-    init(url: String?, size: Int) {
-        self.url = url ?? "https://miniature-gaucamole-ak1h8di2q.now.sh/static/default-album-artwork.jpeg"
-        self.size = size
-    }
-    
     var body: some View {
-        URLImage(
-            imageURL(),
-            placeholder: { _ in
-                Image(uiImage: #imageLiteral(resourceName: "DefaultAlbumArt"))
+        VStack {
+            if url == nil {
+                Image("DefaultAlbumArt")
                     .resizable()
                     .cornerRadius(4)
                     .aspectRatio(contentMode: .fit)
-        },
-            content: {
-                $0.image
-                    .resizable()
-                    .cornerRadius(4)
-                    .aspectRatio(1, contentMode: .fill)
-        })
-    }
-}
-
-struct AlbumPageView: View {
-    let musicPlayer = MPMusicPlayerApplicationController.applicationQueuePlayer
-    var item: MediaItem
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            HStack(alignment: .top) {
-                AlbumArt(url: item.attributes.artwork?.url, size: 360).frame(width: 120, height: 120).onTapGesture {
-                    print(self.item)
-                }
-                VStack(alignment: .leading) {
-                    Text(item.attributes.name)
-                    Text(item.attributes.artistName)
-                }
+            } else {
+                URLImage(
+                    imageURL(),
+                    placeholder: { _ in
+                        Image("DefaultAlbumArt")
+                            .resizable()
+                            .cornerRadius(4)
+                            .aspectRatio(contentMode: .fit)
+                },
+                    content: { proxy in
+                        proxy.image
+                            .resizable()
+                            .cornerRadius(4)
+                            .aspectRatio(1, contentMode: .fill)
+                })
             }
-//            if model.hasLoaded {
-//                ForEach(data.data[0].relationships.tracks.data, id: \.id) { track in
-//                    Text(track.attributes.name)
-//                }
-//            }
         }
     }
 }
