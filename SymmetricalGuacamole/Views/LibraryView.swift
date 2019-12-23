@@ -16,11 +16,7 @@ struct AlbumLoop: View {
             HStack(spacing: 16) {
                 ForEach(self.data[index], id: \.id) { item in
                     NavigationLink(destination: AlbumPageView(item: item)) {
-                        AlbumListItem(
-                            image: item.attributes.artwork?.url,
-                            name: item.attributes.name,
-                            artistName: item.attributes.artistName
-                        )
+                        AlbumListItem(album: item)
                     }.buttonStyle(PlainButtonStyle())
                 }
             }.padding(.horizontal, 20)
@@ -29,15 +25,13 @@ struct AlbumLoop: View {
 }
 
 struct AlbumListItem: View {
-    var image: String?
-    var name: String
-    var artistName: String
+    var album: MediaItem
 
     var body: some View {
         VStack(alignment: .leading) {
-            AlbumArt(url: image, size: 360)
-            Text(name).lineLimit(1).font(.footnote)
-            Text(artistName).foregroundColor(.gray).font(.footnote)
+            AlbumArt(url: album.attributes.artwork?.url, size: 360)
+            Text(album.attributes.name).lineLimit(1).font(.footnote)
+            Text(album.attributes.artistName).foregroundColor(.gray).font(.footnote)
         }
     }
 }
