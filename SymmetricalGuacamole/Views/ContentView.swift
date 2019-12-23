@@ -11,23 +11,17 @@ import MediaPlayer
 import StoreKit
 import URLImage
 
-struct AlbumListItem: View {
-    private var image: String
-    private var name: String
-    private var artistName: String
+
+struct AlbumArt: View {
+    private var url: String
+    private var size: Int
     
-    init(image: String, name: String, artistName: String) {
-        self.image = image
-        self.name = name
-        self.artistName = artistName
-    }
-    
-    private func imageURL(size: Int) -> URL {
+    private func imageURL() -> URL {
         // 1) Replace the "{w}" placeholder with the desired width as an integer value.
-        var imageURLString = image.replacingOccurrences(of: "{w}", with: "\(size)")
+        var imageURLString = self.url.replacingOccurrences(of: "{w}", with: "\(self.size)")
         
         // 2) Replace the "{h}" placeholder with the desired height as an integer value.
-        imageURLString = imageURLString.replacingOccurrences(of: "{h}", with: "\(size)")
+        imageURLString = imageURLString.replacingOccurrences(of: "{h}", with: "\(self.size)")
         
         // 3) Replace the "{f}" placeholder with the desired image format.
         imageURLString = imageURLString.replacingOccurrences(of: "{f}", with: "png")
@@ -35,106 +29,84 @@ struct AlbumListItem: View {
         return URL(string: imageURLString)!
     }
     
+    init(url: String?, size: Int) {
+        self.url = url ?? "https://miniature-gaucamole-ak1h8di2q.now.sh/static/default-album-artwork.jpeg"
+        self.size = size
+    }
+    
     var body: some View {
-        VStack(alignment: .leading) {
-            URLImage(imageURL(size: 360), content: {
-                $0.image
+        URLImage(
+            imageURL(),
+            placeholder: { _ in
+                Image(uiImage: #imageLiteral(resourceName: "DefaultAlbumArt"))
                     .resizable()
-                    .frame(width: 180, height: 180)
                     .cornerRadius(4)
                     .aspectRatio(contentMode: .fit)
-            })
-            Text(name)
-            Text(artistName).foregroundColor(.gray)
-        }.padding(.leading, 5)
-    }
-}
-
-struct AlbumPageView: View {
-    private var item: MediaItem
-    
-    func playAlbum() {
-        let authStatus = SKCloudServiceController.authorizationStatus()
-        
-        switch authStatus {
-        case .authorized:
-            print("")
-        default:
-            SKCloudServiceController.requestAuthorization { status in
-                
-                print(status)
-            }
-        }
-    }
-    
-    
-    init(item: MediaItem) {
-        self.item = item
-    }
-    
-    @State private var showAlert: Bool = false
-    
-    var body: some View {
-        Text("WHY ARE YOU HERE?").onTapGesture {
-            self.playAlbum()
-        }.onTapGesture {
-            self.showAlert = true
-        }.alert(isPresented: $showAlert, content: {
-            Alert(title: Text("Important message"), message: Text("work in progress"), dismissButton: .default(Text("Got it!")))
-            
+        },
+            content: {
+                $0.image
+                    .resizable()
+                    .cornerRadius(4)
+                    .aspectRatio(1, contentMode: .fill)
         })
     }
 }
 
-struct AlbumLoop: View {
-    private var data: [[MediaItem]]
-    
-    init(data: [[MediaItem]]) {
-        self.data = data
-    }
+struct AlbumPageView: View {
+    let musicPlayer = MPMusicPlayerApplicationController.applicationQueuePlayer
+    var item: MediaItem
     
     var body: some View {
-        ForEach(0..<data.count) { index in
-            HStack(spacing: 16) {
-                ForEach(self.data[index], id: \.id) { item in
-                    NavigationLink(destination: AlbumPageView(item: item)) {
-                        AlbumListItem(
-                            image: item.attributes.artwork?.url ?? "https://miniature-gaucamole-ak1h8di2q.now.sh/static/default-album-artwork.jpeg",
-                            name: item.attributes.name,
-                            artistName: item.attributes.artistName == "" ? "Unknown Artist" : item.attributes.artistName
-                        )
-                    }.buttonStyle(PlainButtonStyle())
+        VStack(alignment: .leading) {
+            HStack(alignment: .top) {
+                AlbumArt(url: item.attributes.artwork?.url, size: 360).frame(width: 120, height: 120).onTapGesture {
+                    print(self.item)
+                }
+                VStack(alignment: .leading) {
+                    Text(item.attributes.name)
+                    Text(item.attributes.artistName)
                 }
             }
+//            if model.hasLoaded {
+//                ForEach(data.data[0].relationships.tracks.data, id: \.id) { track in
+//                    Text(track.attributes.name)
+//                }
+//            }
         }
     }
 }
 
 struct ContentView: View {
-    @ObservedObject var model = AlbumListViewModel()
-    
     var body: some View {
-        NavigationView {
-            ScrollView(.vertical) {
-                NavigationList()
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text("Recently Added").bold().font(.system(size: 20))
-                    }
-                }
-                
-                if !model.hasLoaded {
-                    HStack {
-                        Text("Loading...")
-                    }
-                } else {
-                    AlbumLoop(data: model.chunked)
-                }
+        TabView {
+            LibraryView()
+                .accentColor(.pink)
+                .tabItem {
+                    Image(systemName: "music.note").font(.title).foregroundColor(.pink)
+                    Text("Library")
+            }.tag(0)
+            ForYouView()
+                .tabItem {
+                    Image(systemName: "heart.fill").font(.title).foregroundColor(.pink)
+                    Text("For You")
             }
-            .navigationBarTitle("Library")
-            .navigationBarItems(
-                trailing: Text("Edit").foregroundColor(.pink)
-            )
+            ForYouView()
+                .tabItem {
+                    Image(systemName: "music.note").font(.title).foregroundColor(.pink)
+                    Text("Browse")
+            }
+            ForYouView()
+                .tabItem {
+                    Image(systemName: "dot.radiowaves.left.and.right").font(.title).foregroundColor(.pink)
+                    Text("Radio")
+                    
+            }
+            ForYouView()
+                .tabItem {
+                    Image(systemName: "magnifyingglass").font(.title).foregroundColor(.pink)
+                    Text("Search")
+                    
+            }
         }.accentColor(.pink)
     }
 }

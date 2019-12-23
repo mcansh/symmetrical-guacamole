@@ -15,6 +15,7 @@ final class AlbumListViewModel: ObservableObject {
     @Published var next = String()
     @Published var chunked = [[MediaItem]]()
     @Published var hasLoaded: Bool = false
+    let didChange = PassthroughSubject<AlbumListViewModel, Never>()
     
     init() {
         fetchMusic()
@@ -28,8 +29,6 @@ final class AlbumListViewModel: ObservableObject {
             self.hasLoaded = true
         }
     }
-    
-    let didChange = PassthroughSubject<AlbumListViewModel, Never>()
 }
 
 

@@ -10,17 +10,15 @@ import Foundation
 import SwiftUI
 import Combine
 
-//final class AlbumViewModel: ObservableObject {
-//    @Published var data = [APIResponseDatum]()
-//    @Published var hasLoaded: Bool = false
-//    
-//    init(albumId: String) {
-//        MusicKit().getAlbumById(albumId: albumId) {
-//            self.data = $0.data
-//            self.hasLoaded = true
-//        }
-//    }
-//    
-//    
-//    let didChange = PassthroughSubject<AlbumViewModel, Never>()
-//}
+final class AlbumViewModel: ObservableObject {
+    @Published var data = [AlbumAPIResponseDatum]()
+    @Published var hasLoaded: Bool = false
+    let didChange = PassthroughSubject<AlbumViewModel, Never>()
+    
+    init(albumId: String) {
+        MusicKit().getAlbumById(albumId: albumId) {
+            self.data = $0.data
+            self.hasLoaded = true
+        }
+    }
+}

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C90A5A7023AEA1FD004D3597 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = C90A5A6F23AEA1FD004D3597 /* URLImage */; };
+		C93088AD23B0273800A1BB9A /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93088AC23B0273800A1BB9A /* SearchView.swift */; };
 		C94895E623AEAD6D00909DEF /* AlbumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94895E523AEAD6D00909DEF /* AlbumViewModel.swift */; };
 		C95B286A23AB26560040380B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B286923AB26560040380B /* AppDelegate.swift */; };
 		C95B286C23AB26560040380B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B286B23AB26560040380B /* SceneDelegate.swift */; };
@@ -15,30 +16,13 @@
 		C95B287023AB26560040380B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C95B286F23AB26560040380B /* Assets.xcassets */; };
 		C95B287323AB26560040380B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C95B287223AB26560040380B /* Preview Assets.xcassets */; };
 		C95B287623AB26560040380B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C95B287423AB26560040380B /* LaunchScreen.storyboard */; };
-		C95B288123AB26560040380B /* SymmetricalGuacamoleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B288023AB26560040380B /* SymmetricalGuacamoleTests.swift */; };
-		C95B288C23AB26560040380B /* SymmetricalGuacamoleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B288B23AB26560040380B /* SymmetricalGuacamoleUITests.swift */; };
+		C9C578EF23AFD34800A162DD /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = C9C578EE23AFD34800A162DD /* Sentry */; };
+		C9F44E8E23B0056A00C1D03C /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F44E8D23B0056A00C1D03C /* LibraryView.swift */; };
+		C9F44E9023B0069D00C1D03C /* ForYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F44E8F23B0069D00C1D03C /* ForYouView.swift */; };
 		C9F9FA9323AE73A500A4438B /* AppleMusicRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F9FA9223AE73A500A4438B /* AppleMusicRequestFactory.swift */; };
 		C9F9FAA023AE90F500A4438B /* MusicKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F9FA9F23AE90F500A4438B /* MusicKit.swift */; };
 		C9F9FAA323AE94EB00A4438B /* AlbumListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F9FAA223AE94EB00A4438B /* AlbumListViewModel.swift */; };
-		C9F9FAA623AE9E5000A4438B /* NavigationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F9FAA523AE9E5000A4438B /* NavigationList.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		C95B287D23AB26560040380B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C95B285E23AB26560040380B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C95B286523AB26560040380B;
-			remoteInfo = SymmetricalGuacamole;
-		};
-		C95B288823AB26560040380B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C95B285E23AB26560040380B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C95B286523AB26560040380B;
-			remoteInfo = SymmetricalGuacamole;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		C92F053523AC811800F298DF /* Embed Frameworks */ = {
@@ -54,6 +38,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C93088AC23B0273800A1BB9A /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		C94895E523AEAD6D00909DEF /* AlbumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewModel.swift; sourceTree = "<group>"; };
 		C95B286623AB26560040380B /* Guacamole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guacamole.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C95B286923AB26560040380B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,16 +48,11 @@
 		C95B287223AB26560040380B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C95B287523AB26560040380B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C95B287723AB26560040380B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C95B287C23AB26560040380B /* SymmetricalGuacamoleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SymmetricalGuacamoleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C95B288023AB26560040380B /* SymmetricalGuacamoleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymmetricalGuacamoleTests.swift; sourceTree = "<group>"; };
-		C95B288223AB26560040380B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C95B288723AB26560040380B /* SymmetricalGuacamoleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SymmetricalGuacamoleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C95B288B23AB26560040380B /* SymmetricalGuacamoleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymmetricalGuacamoleUITests.swift; sourceTree = "<group>"; };
-		C95B288D23AB26560040380B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9F44E8D23B0056A00C1D03C /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		C9F44E8F23B0069D00C1D03C /* ForYouView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouView.swift; sourceTree = "<group>"; };
 		C9F9FA9223AE73A500A4438B /* AppleMusicRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicRequestFactory.swift; sourceTree = "<group>"; };
 		C9F9FA9F23AE90F500A4438B /* MusicKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicKit.swift; sourceTree = "<group>"; };
 		C9F9FAA223AE94EB00A4438B /* AlbumListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListViewModel.swift; sourceTree = "<group>"; };
-		C9F9FAA523AE9E5000A4438B /* NavigationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,20 +61,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C90A5A7023AEA1FD004D3597 /* URLImage in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C95B287923AB26560040380B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C95B288423AB26560040380B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				C9C578EF23AFD34800A162DD /* Sentry in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,8 +72,6 @@
 			isa = PBXGroup;
 			children = (
 				C95B286823AB26560040380B /* SymmetricalGuacamole */,
-				C95B287F23AB26560040380B /* SymmetricalGuacamoleTests */,
-				C95B288A23AB26560040380B /* SymmetricalGuacamoleUITests */,
 				C95B286723AB26560040380B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -115,8 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				C95B286623AB26560040380B /* Guacamole.app */,
-				C95B287C23AB26560040380B /* SymmetricalGuacamoleTests.xctest */,
-				C95B288723AB26560040380B /* SymmetricalGuacamoleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,24 +108,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		C95B287F23AB26560040380B /* SymmetricalGuacamoleTests */ = {
-			isa = PBXGroup;
-			children = (
-				C95B288023AB26560040380B /* SymmetricalGuacamoleTests.swift */,
-				C95B288223AB26560040380B /* Info.plist */,
-			);
-			path = SymmetricalGuacamoleTests;
-			sourceTree = "<group>";
-		};
-		C95B288A23AB26560040380B /* SymmetricalGuacamoleUITests */ = {
-			isa = PBXGroup;
-			children = (
-				C95B288B23AB26560040380B /* SymmetricalGuacamoleUITests.swift */,
-				C95B288D23AB26560040380B /* Info.plist */,
-			);
-			path = SymmetricalGuacamoleUITests;
-			sourceTree = "<group>";
-		};
 		C9F9FA9123AE739A00A4438B /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,7 +130,9 @@
 			isa = PBXGroup;
 			children = (
 				C95B286D23AB26560040380B /* ContentView.swift */,
-				C9F9FAA523AE9E5000A4438B /* NavigationList.swift */,
+				C9F44E8D23B0056A00C1D03C /* LibraryView.swift */,
+				C9F44E8F23B0069D00C1D03C /* ForYouView.swift */,
+				C93088AC23B0273800A1BB9A /* SearchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -201,6 +148,7 @@
 				C95B286323AB26560040380B /* Frameworks */,
 				C95B286423AB26560040380B /* Resources */,
 				C92F053523AC811800F298DF /* Embed Frameworks */,
+				C9C578F023AFD3C500A162DD /* Upload symbols to Sentry */,
 			);
 			buildRules = (
 			);
@@ -209,46 +157,11 @@
 			name = Guacamole;
 			packageProductDependencies = (
 				C90A5A6F23AEA1FD004D3597 /* URLImage */,
+				C9C578EE23AFD34800A162DD /* Sentry */,
 			);
 			productName = SymmetricalGuacamole;
 			productReference = C95B286623AB26560040380B /* Guacamole.app */;
 			productType = "com.apple.product-type.application";
-		};
-		C95B287B23AB26560040380B /* SymmetricalGuacamoleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C95B289323AB26560040380B /* Build configuration list for PBXNativeTarget "SymmetricalGuacamoleTests" */;
-			buildPhases = (
-				C95B287823AB26560040380B /* Sources */,
-				C95B287923AB26560040380B /* Frameworks */,
-				C95B287A23AB26560040380B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C95B287E23AB26560040380B /* PBXTargetDependency */,
-			);
-			name = SymmetricalGuacamoleTests;
-			productName = SymmetricalGuacamoleTests;
-			productReference = C95B287C23AB26560040380B /* SymmetricalGuacamoleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		C95B288623AB26560040380B /* SymmetricalGuacamoleUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C95B289623AB26560040380B /* Build configuration list for PBXNativeTarget "SymmetricalGuacamoleUITests" */;
-			buildPhases = (
-				C95B288323AB26560040380B /* Sources */,
-				C95B288423AB26560040380B /* Frameworks */,
-				C95B288523AB26560040380B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C95B288923AB26560040380B /* PBXTargetDependency */,
-			);
-			name = SymmetricalGuacamoleUITests;
-			productName = SymmetricalGuacamoleUITests;
-			productReference = C95B288723AB26560040380B /* SymmetricalGuacamoleUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -263,14 +176,6 @@
 					C95B286523AB26560040380B = {
 						CreatedOnToolsVersion = 11.3;
 					};
-					C95B287B23AB26560040380B = {
-						CreatedOnToolsVersion = 11.3;
-						TestTargetID = C95B286523AB26560040380B;
-					};
-					C95B288623AB26560040380B = {
-						CreatedOnToolsVersion = 11.3;
-						TestTargetID = C95B286523AB26560040380B;
-					};
 				};
 			};
 			buildConfigurationList = C95B286123AB26560040380B /* Build configuration list for PBXProject "SymmetricalGuacamole" */;
@@ -284,14 +189,13 @@
 			mainGroup = C95B285D23AB26560040380B;
 			packageReferences = (
 				C90A5A6E23AEA1FD004D3597 /* XCRemoteSwiftPackageReference "url-image" */,
+				C9C578ED23AFD34800A162DD /* XCRemoteSwiftPackageReference "sentry-cocoa" */,
 			);
 			productRefGroup = C95B286723AB26560040380B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				C95B286523AB26560040380B /* Guacamole */,
-				C95B287B23AB26560040380B /* SymmetricalGuacamoleTests */,
-				C95B288623AB26560040380B /* SymmetricalGuacamoleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -307,21 +211,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C95B287A23AB26560040380B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C95B288523AB26560040380B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C9C578F023AFD3C500A162DD /* Upload symbols to Sentry */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Upload symbols to Sentry";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which sentry-cli >/dev/null; then\nexport SENTRY_ORG=mcansh\nexport SENTRY_PROJECT=symmetrical-guacamole\nexport SENTRY_AUTH_TOKEN=f3000277e78d46719595649a2bdc5b5bee8dab7b5a684e09a6f4ec80c940e6a8\nERROR=$(sentry-cli upload-dif \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}\" 2>&1 >/dev/null)\nif [ ! $? -eq 0 ]; then\necho \"warning: sentry-cli - $ERROR\"\nfi\nelse\necho \"warning: sentry-cli not installed, download from https://github.com/getsentry/sentry-cli/releases\"\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C95B286223AB26560040380B /* Sources */ = {
@@ -331,44 +243,17 @@
 				C95B286A23AB26560040380B /* AppDelegate.swift in Sources */,
 				C9F9FA9323AE73A500A4438B /* AppleMusicRequestFactory.swift in Sources */,
 				C95B286C23AB26560040380B /* SceneDelegate.swift in Sources */,
-				C9F9FAA623AE9E5000A4438B /* NavigationList.swift in Sources */,
+				C9F44E8E23B0056A00C1D03C /* LibraryView.swift in Sources */,
 				C94895E623AEAD6D00909DEF /* AlbumViewModel.swift in Sources */,
 				C9F9FAA323AE94EB00A4438B /* AlbumListViewModel.swift in Sources */,
 				C9F9FAA023AE90F500A4438B /* MusicKit.swift in Sources */,
+				C9F44E9023B0069D00C1D03C /* ForYouView.swift in Sources */,
 				C95B286E23AB26560040380B /* ContentView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C95B287823AB26560040380B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C95B288123AB26560040380B /* SymmetricalGuacamoleTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C95B288323AB26560040380B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C95B288C23AB26560040380B /* SymmetricalGuacamoleUITests.swift in Sources */,
+				C93088AD23B0273800A1BB9A /* SearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		C95B287E23AB26560040380B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C95B286523AB26560040380B /* Guacamole */;
-			targetProxy = C95B287D23AB26560040380B /* PBXContainerItemProxy */;
-		};
-		C95B288923AB26560040380B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C95B286523AB26560040380B /* Guacamole */;
-			targetProxy = C95B288823AB26560040380B /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C95B287423AB26560040380B /* LaunchScreen.storyboard */ = {
@@ -509,6 +394,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sh.mcan.SymmetricalGuacamole;
 				PRODUCT_NAME = Guacamole;
 				SWIFT_VERSION = 5.0;
@@ -529,94 +415,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sh.mcan.SymmetricalGuacamole;
 				PRODUCT_NAME = Guacamole;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		C95B289423AB26560040380B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZN48NS8HAP;
-				INFOPLIST_FILE = SymmetricalGuacamoleTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = sh.mcan.SymmetricalGuacamoleTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SymmetricalGuacamole.app/SymmetricalGuacamole";
-			};
-			name = Debug;
-		};
-		C95B289523AB26560040380B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZN48NS8HAP;
-				INFOPLIST_FILE = SymmetricalGuacamoleTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = sh.mcan.SymmetricalGuacamoleTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SymmetricalGuacamole.app/SymmetricalGuacamole";
-			};
-			name = Release;
-		};
-		C95B289723AB26560040380B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZN48NS8HAP;
-				INFOPLIST_FILE = SymmetricalGuacamoleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = sh.mcan.SymmetricalGuacamoleUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SymmetricalGuacamole;
-			};
-			name = Debug;
-		};
-		C95B289823AB26560040380B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZN48NS8HAP;
-				INFOPLIST_FILE = SymmetricalGuacamoleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = sh.mcan.SymmetricalGuacamoleUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SymmetricalGuacamole;
 			};
 			name = Release;
 		};
@@ -641,24 +444,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C95B289323AB26560040380B /* Build configuration list for PBXNativeTarget "SymmetricalGuacamoleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C95B289423AB26560040380B /* Debug */,
-				C95B289523AB26560040380B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C95B289623AB26560040380B /* Build configuration list for PBXNativeTarget "SymmetricalGuacamoleUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C95B289723AB26560040380B /* Debug */,
-				C95B289823AB26560040380B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -670,6 +455,14 @@
 				minimumVersion = 0.9.9;
 			};
 		};
+		C9C578ED23AFD34800A162DD /* XCRemoteSwiftPackageReference "sentry-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/getsentry/sentry-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -677,6 +470,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C90A5A6E23AEA1FD004D3597 /* XCRemoteSwiftPackageReference "url-image" */;
 			productName = URLImage;
+		};
+		C9C578EE23AFD34800A162DD /* Sentry */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9C578ED23AFD34800A162DD /* XCRemoteSwiftPackageReference "sentry-cocoa" */;
+			productName = Sentry;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

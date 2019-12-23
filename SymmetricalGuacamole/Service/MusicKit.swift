@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import StoreKit
+import SwiftUI
 
 struct PlayParams: Codable {
     let id: String
@@ -36,48 +38,103 @@ struct APIResponse: Codable {
     let data: [MediaItem]
 }
 
+//==========================================================================
+// MARK: - AlbumAPIResponse
 struct AlbumAPIResponse: Codable {
-    let data: [APIResponseDatum]
+    let data: [AlbumAPIResponseDatum]
 }
 
-struct APIResponseDatum: Codable {
+// MARK: - AlbumAPIResponseDatum
+struct AlbumAPIResponseDatum: Codable {
     let id, type, href: String
-    let attributes: Attributes
+    let attributes: PurpleAttributes
     let relationships: Relationships
 }
 
+// MARK: - PurpleAttributes
+struct PurpleAttributes: Codable {
+    let dateAdded: String
+    let playParams: PurplePlayParams
+    let artwork: Artwork
+    let trackCount: Int
+    let artistName: String
+    let name: String
+}
+
+// MARK: - PurplePlayParams
+struct PurplePlayParams: Codable {
+    let id, kind: String
+    let isLibrary: Bool
+}
+
+// MARK: - Relationships
 struct Relationships: Codable {
     let tracks: Tracks
 }
 
+// MARK: - Tracks
 struct Tracks: Codable {
     let data: [TracksDatum]
-    let href, next: String
-     let meta: Meta
+    let href: String
+    let next: String?
+    let meta: Meta
 }
 
+// MARK: - TracksDatum
+struct TracksDatum: Codable {
+    let id: String
+    let type: String
+    let href: String
+    let attributes: FluffyAttributes
+}
+
+// MARK: - FluffyAttributes
+struct FluffyAttributes: Codable {
+    let durationInMillis, trackNumber: Int
+    let playParams: FluffyPlayParams
+    let artwork: Artwork
+    let genreNames: [String]
+    let artistName: String
+    let name: String
+    let albumName: String
+}
+
+// MARK: - FluffyPlayParams
+struct FluffyPlayParams: Codable {
+    let id: String
+    let kind: String
+    let isLibrary, reporting: Bool
+    let catalogID: String?
+
+    enum CodingKeys: String, CodingKey {
+        case id, kind, isLibrary, reporting
+        case catalogID
+    }
+}
+
+// MARK: - Meta
 struct Meta: Codable {
     let total: Int
 }
 
-struct TracksDatum: Codable {
-    let id, type, href: String
-    let attributes: FluffyAttributes
-}
-
-struct FluffyAttributes: Codable {
-    let playParams: PlayParams
-    let genreNames, name, albumName, artistName: String
-    let durationInMillis, trackNumber: Int
-    let artwork: Artwork
-}
-
 class MusicKit {
+    @State private var developerToken: String
+    @State private var userToken: String
+    
     func recentlyAdded(completion: @escaping (APIResponse) -> ()) {
-        let request = AppleMusicRequestFactory.createRecentlyAddedRequest(developerToken: "", userToken: "")
-
+        let request = AppleMusicRequestFactory.createRecentlyAddedRequest(developerToken: self.developerToken, userToken: self.userToken)
         URLSession.shared.dataTask(with: request) { data, _, _ in
             let json = try! JSONDecoder().decode(APIResponse.self, from: data!)
+            DispatchQueue.main.async {
+                completion(json)
+            }
+        }.resume()
+    }
+    
+    func getAlbumById(albumId: String, completion: @escaping (AlbumAPIResponse) -> ()) {
+        let request = AppleMusicRequestFactory.createAlbumRequest(albumId: albumId, developerToken: self.developerToken, userToken: self.userToken)
+        URLSession.shared.dataTask(with: request) { data, _, _ in
+            let json = try! JSONDecoder().decode(AlbumAPIResponse.self, from: data!)
             DispatchQueue.main.async {
                 completion(json)
             }
