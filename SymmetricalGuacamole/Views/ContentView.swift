@@ -11,24 +11,23 @@ import MediaPlayer
 import StoreKit
 import URLImage
 
-
 struct AlbumArt: View {
     var url: String?
     var size: Int
-    
+
     private func imageURL() -> URL {
         // 1) Replace the "{w}" placeholder with the desired width as an integer value.
         var imageURLString = self.url!.replacingOccurrences(of: "{w}", with: "\(self.size)")
-        
+
         // 2) Replace the "{h}" placeholder with the desired height as an integer value.
         imageURLString = imageURLString.replacingOccurrences(of: "{h}", with: "\(self.size)")
-        
+
         // 3) Replace the "{f}" placeholder with the desired image format.
         imageURLString = imageURLString.replacingOccurrences(of: "{f}", with: "png")
-        
+
         return URL(string: imageURLString)!
     }
-    
+
     var body: some View {
         VStack {
             if url == nil {
@@ -59,10 +58,10 @@ struct AlbumArt: View {
 struct ContentView: View {
     private var musicPlayerManager = MPMusicPlayerApplicationController.systemMusicPlayer
     private let NC = NotificationCenter.default
-    
+
     @State private var nowPlayingArtwork: Image? = nil
     @State private var nowPlayingTitle: String = ""
-    
+
     func updateCurrentItemMetadata() {
         if let current = musicPlayerManager.nowPlayingItem {
             print(current.artwork)
@@ -73,15 +72,13 @@ struct ContentView: View {
             nowPlayingTitle = "Not Playing"
         }
     }
-    
-    
-    
+
     func handleMusicPlayerManagerDidUpdateState(notification: Notification) {
         DispatchQueue.main.async {
             self.updateCurrentItemMetadata()
         }
     }
-    
+
     var body: some View {
         VStack {
             TabView {
@@ -91,6 +88,7 @@ struct ContentView: View {
                         Image(systemName: "music.note").font(.title).foregroundColor(.pink)
                         Text("Library")
                 }.overlay(
+
                     HStack {
                         (nowPlayingArtwork)?.resizable().frame(width: 50, height: 50).cornerRadius(4)
                         Text(nowPlayingTitle)
@@ -99,7 +97,7 @@ struct ContentView: View {
                         Image(systemName: "forward.fill")
                     }
                     .padding(.horizontal, 20)
-                    .padding(.vertical)
+                    .padding(.vertical, 10)
                     , alignment: .bottom
                 )
                 ForYouView()
@@ -116,13 +114,13 @@ struct ContentView: View {
                     .tabItem {
                         Image(systemName: "dot.radiowaves.left.and.right").font(.title).foregroundColor(.pink)
                         Text("Radio")
-                        
+
                 }
                 SearchView()
                     .tabItem {
                         Image(systemName: "magnifyingglass").font(.title).foregroundColor(.pink)
                         Text("Search")
-                        
+
                 }
             }
             .accentColor(.pink)
@@ -134,7 +132,7 @@ struct ContentView: View {
                 queue: nil,
                 using: self.handleMusicPlayerManagerDidUpdateState
             )
-            
+
             self.updateCurrentItemMetadata()
         }
     }

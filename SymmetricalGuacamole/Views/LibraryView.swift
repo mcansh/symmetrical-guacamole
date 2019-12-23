@@ -10,7 +10,7 @@ import SwiftUI
 
 struct AlbumLoop: View {
     var data: [[MediaItem]]
-    
+
     var body: some View {
         ForEach(0..<data.count) { index in
             HStack(spacing: 16) {
@@ -32,12 +32,24 @@ struct AlbumListItem: View {
     var image: String?
     var name: String
     var artistName: String
-    
+
     var body: some View {
         VStack(alignment: .leading) {
             AlbumArt(url: image, size: 360)
             Text(name).lineLimit(1).font(.footnote)
             Text(artistName).foregroundColor(.gray).font(.footnote)
+        }
+    }
+}
+
+struct PlaylistsView: View {
+    var body: some View {
+        NavigationView {
+            VStack {
+                Text("shrug").navigationBarTitle("Playlists")
+                Spacer()
+            }
+
         }
     }
 }
@@ -50,14 +62,14 @@ struct LibraryView: View {
         "Songs",
         "Downloaded Music"
     ]
-    
+
     @ObservedObject var model = AlbumListViewModel()
-    
+
     var body: some View {
         NavigationView {
             ScrollView(.vertical) {
                 ForEach(0..<items.count) { index in
-                    NavigationLink(destination: ForYouView()) {
+                    NavigationLink(destination: PlaylistsView()) {
                         VStack(alignment: .leading) {
                             if index == 0 {
                                 Divider().padding(.bottom, 4)
@@ -67,12 +79,12 @@ struct LibraryView: View {
                         }
                     }.accentColor(.pink).padding(.horizontal, 20)
                 }
-                VStack(alignment: .leading) {
-                    Text("Recently Added").bold().font(.system(size: 20))
-                }
-                
                 if model.hasLoaded {
-                    AlbumLoop(data: model.chunked)
+                    VStack(alignment: .leading){
+                        Section(header: Text("Recently Added").font(.title).fontWeight(.bold).padding(.horizontal, 20)) {
+                            AlbumLoop(data: model.chunked)
+                        }
+                    }
                 }
             }
             .navigationBarTitle("Library")
@@ -96,3 +108,4 @@ struct LibraryView_Previews: PreviewProvider {
         }
     }
 }
+
