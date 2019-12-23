@@ -55,7 +55,7 @@ struct AlbumAPIResponseDatum: Codable {
 struct PurpleAttributes: Codable {
     let dateAdded: String
     let playParams: PurplePlayParams
-    let artwork: Artwork
+    let artwork: Artwork?
     let trackCount: Int
     let artistName: String
     let name: String
@@ -92,11 +92,11 @@ struct TracksDatum: Codable {
 struct FluffyAttributes: Codable {
     let durationInMillis, trackNumber: Int
     let playParams: FluffyPlayParams
-    let artwork: Artwork
+    let artwork: Artwork?
     let genreNames: [String]
     let artistName: String
     let name: String
-    let albumName: String
+    let albumName: String?
 }
 
 // MARK: - FluffyPlayParams
