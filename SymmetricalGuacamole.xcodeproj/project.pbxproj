@@ -233,7 +233,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which sentry-cli >/dev/null; then\nexport SENTRY_ORG=mcansh\nexport SENTRY_PROJECT=symmetrical-guacamole\nexport SENTRY_AUTH_TOKEN=f3000277e78d46719595649a2bdc5b5bee8dab7b5a684e09a6f4ec80c940e6a8\nERROR=$(sentry-cli upload-dif \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}\" 2>&1 >/dev/null)\nif [ ! $? -eq 0 ]; then\necho \"warning: sentry-cli - $ERROR\"\nfi\nelse\necho \"warning: sentry-cli not installed, download from https://github.com/getsentry/sentry-cli/releases\"\nfi\n";
+			shellScript = "#if which sentry-cli >/dev/null; then\n#export SENTRY_ORG=mcansh\n#export SENTRY_PROJECT=symmetrical-guacamole\n#export SENTRY_AUTH_TOKEN=f3000277e78d46719595649a2bdc5b5bee8dab7b5a684e09a6f4ec80c940e6a8\n#ERROR=$(sentry-cli upload-dif \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}\" 2>&1 >/dev/null)\n#if [ ! $? -eq 0 ]; then\n#echo \"warning: sentry-cli - $ERROR\"\n#fi\n#else\n#echo \"warning: sentry-cli not installed, download from https://github.com/getsentry/sentry-cli/releases\"\n#fi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
