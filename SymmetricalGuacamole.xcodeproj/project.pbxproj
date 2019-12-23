@@ -151,7 +151,7 @@
 				C95B286323AB26560040380B /* Frameworks */,
 				C95B286423AB26560040380B /* Resources */,
 				C92F053523AC811800F298DF /* Embed Frameworks */,
-				C9C578F023AFD3C500A162DD /* Upload symbols to Sentry */,
+				C9C578F023AFD3C500A162DD /* Upload Symbols To Sentry */,
 			);
 			buildRules = (
 			);
@@ -217,7 +217,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		C9C578F023AFD3C500A162DD /* Upload symbols to Sentry */ = {
+		C9C578F023AFD3C500A162DD /* Upload Symbols To Sentry */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -226,7 +226,7 @@
 			);
 			inputPaths = (
 			);
-			name = "Upload symbols to Sentry";
+			name = "Upload Symbols To Sentry";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -402,7 +402,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = sh.mcan.SymmetricalGuacamole;
 				PRODUCT_NAME = Guacamole;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -423,7 +423,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = sh.mcan.SymmetricalGuacamole;
 				PRODUCT_NAME = Guacamole;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

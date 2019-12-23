@@ -57,37 +57,86 @@ struct AlbumArt: View {
 }
 
 struct ContentView: View {
+    private var musicPlayerManager = MPMusicPlayerApplicationController.systemMusicPlayer
+    private let NC = NotificationCenter.default
+    
+    @State private var nowPlayingArtwork: Image? = nil
+    @State private var nowPlayingTitle: String = ""
+    
+    func updateCurrentItemMetadata() {
+        if let current = musicPlayerManager.nowPlayingItem {
+            print(current.artwork)
+            nowPlayingArtwork = current.artwork?.image != nil ? Image(uiImage: (current.artwork?.image(at: CGSize(width: 100, height: 100)))!) : Image("DefaultAlbumArt")
+            nowPlayingTitle = current.title ?? "Not Playing"
+        } else {
+            print("nothing is playing")
+            nowPlayingTitle = "Not Playing"
+        }
+    }
+    
+    
+    
+    func handleMusicPlayerManagerDidUpdateState(notification: Notification) {
+        DispatchQueue.main.async {
+            self.updateCurrentItemMetadata()
+        }
+    }
+    
     var body: some View {
-        TabView {
-            LibraryView()
-                .accentColor(.pink)
-                .tabItem {
-                    Image(systemName: "music.note").font(.title).foregroundColor(.pink)
-                    Text("Library")
-            }.tag(0)
-            ForYouView()
-                .tabItem {
-                    Image(systemName: "heart.fill").font(.title).foregroundColor(.pink)
-                    Text("For You")
+        VStack {
+            TabView {
+                LibraryView()
+                    .accentColor(.pink)
+                    .tabItem {
+                        Image(systemName: "music.note").font(.title).foregroundColor(.pink)
+                        Text("Library")
+                }.overlay(
+                    HStack {
+                        (nowPlayingArtwork)?.resizable().frame(width: 50, height: 50).cornerRadius(4)
+                        Text(nowPlayingTitle)
+                        Spacer()
+                        Image(systemName: "play.fill")
+                        Image(systemName: "forward.fill")
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.vertical)
+                    , alignment: .bottom
+                )
+                ForYouView()
+                    .tabItem {
+                        Image(systemName: "heart.fill").font(.title).foregroundColor(.pink)
+                        Text("For You")
+                }
+                ForYouView()
+                    .tabItem {
+                        Image(systemName: "music.note").font(.title).foregroundColor(.pink)
+                        Text("Browse")
+                }
+                ForYouView()
+                    .tabItem {
+                        Image(systemName: "dot.radiowaves.left.and.right").font(.title).foregroundColor(.pink)
+                        Text("Radio")
+                        
+                }
+                SearchView()
+                    .tabItem {
+                        Image(systemName: "magnifyingglass").font(.title).foregroundColor(.pink)
+                        Text("Search")
+                        
+                }
             }
-            ForYouView()
-                .tabItem {
-                    Image(systemName: "music.note").font(.title).foregroundColor(.pink)
-                    Text("Browse")
-            }
-            ForYouView()
-                .tabItem {
-                    Image(systemName: "dot.radiowaves.left.and.right").font(.title).foregroundColor(.pink)
-                    Text("Radio")
-                    
-            }
-            ForYouView()
-                .tabItem {
-                    Image(systemName: "magnifyingglass").font(.title).foregroundColor(.pink)
-                    Text("Search")
-                    
-            }
-        }.accentColor(.pink)
+            .accentColor(.pink)
+        }.onAppear {
+            self.musicPlayerManager.beginGeneratingPlaybackNotifications()
+            self.NC.addObserver(
+                forName: .MPMusicPlayerControllerNowPlayingItemDidChange,
+                object: nil,
+                queue: nil,
+                using: self.handleMusicPlayerManagerDidUpdateState
+            )
+            
+            self.updateCurrentItemMetadata()
+        }
     }
 }
 
